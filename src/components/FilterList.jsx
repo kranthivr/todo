@@ -18,6 +18,9 @@ function FilterList() {
       exclusive
       value={isComplete}
       size="small"
+      sx={{
+        marginBottom: "10px",
+      }}
       onChange={handleFilter}
     >
       <ToggleButton value={true}>Completed</ToggleButton>

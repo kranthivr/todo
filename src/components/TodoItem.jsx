@@ -27,9 +27,7 @@ function TodoItem({ id, task, completed }) {
   const { filteredList, toggleValue } = useSelector((state) => state.todos);
   const editRef = useRef(null);
   const inputEditRef = useRef(null);
-  const editButtonRef = useRef(null);
   const taskRef = useRef(null);
-  const updateButtonRef = useRef(null);
 
   const toggleCheck = () => {
     dispatch(toggleComplete({ id: id, completed: !completed }));

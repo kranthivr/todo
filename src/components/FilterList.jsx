@@ -5,12 +5,12 @@ import { filter } from "../features/todoSlice";
 import { useSelector } from "react-redux";
 
 function FilterList() {
-  const [isComplete, setIsComplete] = useState("all");
+  const [isComplete, setIsComplete] = useState(null);
   const dispatch = useDispatch();
 
   const handleFilter = (e, toggleValue) => {
     setIsComplete(toggleValue);
-    dispatch(filter(toggleValue));
+    dispatch(filter({ toggleValue: toggleValue }));
   };
 
   return (
@@ -23,8 +23,18 @@ function FilterList() {
       }}
       onChange={handleFilter}
     >
-      <ToggleButton value={true}>Completed</ToggleButton>
-      <ToggleButton value={false}>Incomplete</ToggleButton>
+      <ToggleButton
+        sx={{ "&.Mui-selected": { backgroundColor: "#81c784" } }}
+        value={true}
+      >
+        Completed
+      </ToggleButton>
+      <ToggleButton
+        sx={{ "&.Mui-selected": { backgroundColor: "#e57373" } }}
+        value={false}
+      >
+        Incomplete
+      </ToggleButton>
     </ToggleButtonGroup>
   );
 }

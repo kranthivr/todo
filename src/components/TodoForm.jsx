@@ -1,11 +1,12 @@
 import { Button, TextField, Box, FormControl } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todoSlice";
 
 function TodoForm() {
   const [task, setTask] = useState("");
   const dispatch = useDispatch();
+  const textAreaRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ function TodoForm() {
     <form onSubmit={handleSubmit}>
       <Box margin={2} display="flex">
         <TextField
+          autoFocus
           label="Enter Task"
           size="small"
           variant="outlined"

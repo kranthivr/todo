@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 import { Stack } from "@mui/material";
 
 function TodoList() {
-  const todos = useSelector(
-    (state) => state.todos.filteredState || state.todos.list
+  const todos = useSelector((state) =>
+    state.todos.toggleValue !== null
+      ? state.todos.filteredList
+      : state.todos.list
   );
 
   return (

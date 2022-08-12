@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Box display="flex" justifyContent="center">
-        <Typography textAlign="center">Todo App</Typography>
+        <Typography textAlign="center">Editable To Do App</Typography>
         <Link
           marginLeft={2}
           target="_blank"

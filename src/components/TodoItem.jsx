@@ -70,9 +70,9 @@ function TodoItem({ id, task, completed }) {
       <form
         ref={editRef}
         style={{ display: "none" }}
-        onSubmit={() => {
+        onSubmit={(e) => {
           editRef.current.reportValidity();
-          updateTask();
+          updateTask(e);
         }}
       >
         <TextField

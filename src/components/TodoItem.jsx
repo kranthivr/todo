@@ -46,6 +46,7 @@ function TodoItem({ id, task, completed }) {
   const updateTask = (e) => {
     e && e.preventDefault();
     dispatch(updateTodo({ id: tempId, editedTask: editText }));
+    dispatch(filter({ toggleValue: toggleValue }));
     editRef.current.style.display = "none";
     taskRef.current.style.display = "flex";
   };
